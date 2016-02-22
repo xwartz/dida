@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>滴答清单</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width , initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.5,user-scalable=yes">
+      <meta name="keywords" content="滴答清单,嘀嗒清单,dida365,dida,todo,to do,task,tasks,时间管理,GTD,待办事项,提醒,note,notes,android,app,笔记,清单,安卓,iPhone,iOS,应用">
+    <meta name="description" content="滴答清单，一个帮你高效完成任务和规划时间的应用，是一款拥有跨设备云同步、周期提醒、清单管理、清晰分类、协作和集成日历的应用，你可以在Web、Android、iPhone等设备上使用它。">
+    <meta name="author" content="滴答清单">
+    <meta name="robots" content="index,follow">
+    <meta property="qc:admins" content="24614436777641413656375" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="滴答清单">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-itunes-app" content="app-id=626144601">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-icon" href="../img/touch-icon-iphone.png" />
+    <!-- Android Lollipop -->
+    <meta name="theme-color" content="#5f7fb0">
+    <!-- win8 -->
+    <meta name="msapplication-TileColor" content="#5f7fb0"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-config" content="none"/>
+    <!-- old mobile -->
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <!-- uc -->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <!-- QQ -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+        <div id="cnzz" style="display: none">
+            <script type="text/javascript">
+            var _czc = _czc || [];
+            (function (d) {
+              var z=d.createElement("script");z.type="text/javascript";z.async=true;
+              z.src=("https:"==d.location.protocol?"https://":"http://")+"s95.cnzz.com/stat.php?id=1253390991&web_id=1253390991";
+              d.getElementById("cnzz").appendChild(z);
+            })(document);
+            </script>
+        </div>
+
+        <link rel="stylesheet" type="text/css" href="../sites/sign/dist/sign.css">
+
+    <style type="text/css">
+
+      .icon_sign {
+        background-image: url("../deploy/sign/sign-icons.png");
+      }
+
+      @media
+        (min--moz-device-pixel-ratio: 1.5),
+        (-o-min-device-pixel-ratio: 3/2),
+        (-webkit-min-device-pixel-ratio: 1.5),
+        (min-device-pixel-ratio: 1.5),
+        (min-resolution: 1.5dppx) {
+        .icon_sign {
+            background-image: url("../deploy/sign/sign-icons@2.png");
+        }
+      }
+
+
+
+    </style>    <script type="text/javascript">
+      window.Appest = {
+          user: {
+            isDS:  false ,
+            isGFS:  false ,
+            inboxId: '',
+            username: ''
+          },
+          end_date: '',
+          language: '',
+          domain: 'dida365.com',
+          cdn: 'dida365.com',
+          api_domain: 'dida365.com',
+          protocol:  ('http:' === document.location.protocol ? 'http://' : 'https://'),
+          productName: '滴答清单',
+          isCnSites: true,
+          is_product_mode: false,
+          is_package_mode: false
+      }
+    </script>
+</head>
+
+<body>
+  <div class="sign signin-page">
+    <div id="login-box" class="card sign-in">
+      <div class="logo">
+        <span class="icon logo">
+          <i class="icon-logo icon_sign"></i>
+        </span>
+      </div>
+      <div class="card-section">
+        <div id="login-form" class="form form-horizontal">
+          <div class="row email active">
+            <span class="icon email">
+              <i class="icon-email-blue icon_sign" icon="email"></i>
+            </span>
+            <input class="required" id="username" type="email" name="email" value="" placeholder="邮箱" autocomplete="on" autofocus novalidate="false">
+          <span class="input-bar"></span>
+
+          <div class="error">
+              <p class="warn" id="email_invalid_warn">
+                <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                邮箱格式不正确
+              </p>
+              <p id="error_no_user_info" class="warn">
+                <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                <span>对不起，你输入的用户名不存在。</span>
+                <a id="sign_up" class="signup-link signup-entry" href="https://dida365.com/signup">注册</a>
+              </p>
+              <p id="login_server_error" class="warn">
+                <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                <span>服务器错误</span>
+              </p>
+              <p id="not_blank" class="warn">
+                <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                <span>邮箱不能为空</span>
+              </p>
+
+          </div>
+          </div>
+
+          <div class="row password">
+            <span class="icon lock">
+              <i class="icon-lock-gray icon_sign" icon="lock"></i>
+            </span>
+            <input class="required" id="password" type="password" name="password" placeholder="密码">
+            <span class="input-bar"></span>
+            <div class="error">
+                <p class="warn" id="login_length_warn">
+                  <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                  <span>密码的长度至少为6</span>
+                </p>
+                <p id="error_username_password" class="warn">
+                  <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                  <span>密码或用户名错误</span>
+                </p>
+                <p class="warn" id="login_length_warn_empty">
+                  <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+                  <span>密码不能为空</span>
+                </p>
+            </div>
+          </div>
+
+          <div class="row submit btns">
+          <button id="submit-btn" class="btn-initial button btn-med analy" data-analy="signin">登录</button>
+            <button class="btn-loading button btn-med disabled=">登录...</button>
+          </div>
+
+          <div class="row forgot-password">
+            <span class="link switch-site"><a href="https://www.ticktick.com/signin">切换到TickTick</a>)</span>
+            <span class="link">
+              <a id="forget-password" href="https://dida365.com/sign/requestRestPassword">忘记密码</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="error long">
+          <p id="need_switch_domain" class="warn">
+            <span class="warn-icon"><i class="icon-warn icon_sign"></i></span>
+            <span>我们检测到你是TickTick账户，请切换到<a href="https://www.ticktick.com">TickTick</a>登录或者将你的<a href="/public/guide/migration/data-center" target="_blank">数据迁移</a>至滴答清单。</span>
+          </p>
+        </div>
+
+        <div class="signin-sns">
+          <div class="middle-line sns-title">
+            使用第三方账户登录
+          </div>
+          <ul class="sns">
+              <li class="weibo">
+                <a href="https://api.weibo.com/oauth2/authorize?client_id=18974718&response_type=code&redirect_uri=https://www.dida365.com/sign/weibo&scope=follow_app_official_microblog" hidefocus="true" title="微博">
+                  <i class="icon_sign icon-weibo"></i>
+                </a>
+              </li>
+              <li class="wechat second">
+                <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxf1429a73d311aad4&redirect_uri=https://dida365.com/sign/wechat&response_type=code&scope=snsapi_login" hidefocus="true" title="微信">
+                  <i class="icon_sign icon-wechat"></i>
+                </a>
+              </li>
+              <li class="qq">
+                <a href="https://graph.qq.com/oauth2.0/authorize?client_id=101139917&response_type=token&redirect_uri=https://dida365.com/sign/qq&state=$!{state}" hidefocus="true" title="QQ">
+                  <i class="icon_sign icon-qq"></i>
+                </a>
+              </li>
+          </ul>
+        </div>
+
+        <div class="link signup sign-link">
+          <span class="link">
+              <a class="signup-link" href="https://dida365.com/signup">创建免费账户</a>
+            </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+      <script type="text/javascript" src="../sites/sign/src/scripts/jquery.js"></script>
+      <script type="text/javascript" src="../sites/sign/src/scripts/sign.js"></script>
+      <script type="text/javascript" src="../sites/sign/src/scripts/analytics.js"></script>
+</body>
+</html>
