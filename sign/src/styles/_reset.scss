@@ -1,0 +1,73 @@
+$s-base-divider: 36px;
+
+$s-input-placeholder-color: $base-font-color-holder;
+
+@mixin input-placeholder($color) {
+  // style placeholder text cross browser
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $color;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: $color;
+  }
+
+  :-ms-input-placeholder {
+     color: $color !important;
+  }
+}
+
+@include input-placeholder($s-input-placeholder-color);
+
+/*reset style*/
+html, body, div, span, i, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: $base-font-color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $base-font-color-link;
+    text-decoration: underline;
+  }
+
+  &:hover, &:active {
+    outline: 0;
+  }
+
+  &:visited {
+    color: $base-font-color-link;
+    text-decoration: none;
+  }
+
+}
+
+input,
+input:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.button {
+  cursor: pointer;
+  -webkit-appearance: none;
+}

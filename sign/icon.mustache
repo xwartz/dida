@@ -1,0 +1,78 @@
+{
+'functions': true
+}
+
+$sprite: (
+{{#items}}
+  {{name}}: (
+  offset-x: {{px.offset_x}},
+  offset-y: {{px.offset_y}},
+  width: {{px.width}},
+  height: {{px.height}},
+  total-width: {{px.total_width}},
+  total-height: {{px.total_height}},
+  image: '{{{escaped_image}}}'
+  ),
+{{/items}}
+parts: (
+  total-width: {{items.0.px.total_width}},
+  total-height: {{items.0.px.total_height}},
+  image: '{{{items.0.escaped_image}}}'
+  )
+);
+
+{{#options.functions}}
+
+  @mixin sprite-size($image) {
+  background-size: map-get(map-get($sprite, $image), 'total-width') map-get(map-get($sprite, $image), 'total-height');
+  }
+
+  @mixin sprite-width($image) {
+  width: map-get(map-get($sprite, $image), 'width');
+  }
+
+  @mixin sprite-height($image) {
+  height: map-get(map-get($sprite, $image), 'height');
+  }
+
+  @mixin sprite-position($image) {
+  background-position: map-get(map-get($sprite, $image), 'offset-x') map-get(map-get($sprite, $image), 'offset-y');
+  }
+
+  @mixin sprite-image($image) {
+  background-image: url(map-get(map-get($sprite, $image), 'image') + '.png');
+  }
+
+  @mixin sprite-image-retina($image) {
+  background-image: url(map-get(map-get($sprite, $image), 'image') + '@2.png');
+  }
+
+
+{{/options.functions}}
+
+
+{{#items}}
+  .icon-{{name}} {
+  @include sprite-width("{{name}}");
+  @include sprite-height("{{name}}");
+  @include sprite-position("{{name}}");
+  }
+{{/items}}
+
+
+.icon_sign {
+  @include sprite-size('parts');
+  background-repeat: no-repeat;
+  display: inline-block;
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+
+    @include sprite-size('parts');
+
+  }
+}

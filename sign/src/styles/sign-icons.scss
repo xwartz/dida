@@ -1,0 +1,194 @@
+$sprite: (
+  email-blue: (
+  offset-x: -56px,
+  offset-y: -68px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  email-gray: (
+  offset-x: -80px,
+  offset-y: -68px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  lock-blue: (
+  offset-x: -104px,
+  offset-y: -68px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  lock-gray: (
+  offset-x: -128px,
+  offset-y: -68px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  logo: (
+  offset-x: 0px,
+  offset-y: 0px,
+  width: 64px,
+  height: 68px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  name-blue: (
+  offset-x: -152px,
+  offset-y: -68px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  name-gray: (
+  offset-x: -56px,
+  offset-y: -92px,
+  width: 24px,
+  height: 24px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  qq: (
+  offset-x: -64px,
+  offset-y: 0px,
+  width: 56px,
+  height: 56px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  wechat: (
+  offset-x: -120px,
+  offset-y: 0px,
+  width: 56px,
+  height: 56px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+  weibo: (
+  offset-x: 0px,
+  offset-y: -68px,
+  width: 56px,
+  height: 56px,
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  ),
+parts: (
+  total-width: 176px,
+  total-height: 124px,
+  image: 'sign-icons.png'
+  )
+);
+
+
+  @mixin sprite-size($image) {
+  background-size: map-get(map-get($sprite, $image), 'total-width') map-get(map-get($sprite, $image), 'total-height');
+  }
+
+  @mixin sprite-width($image) {
+  width: map-get(map-get($sprite, $image), 'width');
+  }
+
+  @mixin sprite-height($image) {
+  height: map-get(map-get($sprite, $image), 'height');
+  }
+
+  @mixin sprite-position($image) {
+  background-position: map-get(map-get($sprite, $image), 'offset-x') map-get(map-get($sprite, $image), 'offset-y');
+  }
+
+  @mixin sprite-image($image) {
+  background-image: url(map-get(map-get($sprite, $image), 'image') + '.png');
+  }
+
+  @mixin sprite-image-retina($image) {
+  background-image: url(map-get(map-get($sprite, $image), 'image') + '@2.png');
+  }
+
+
+
+
+  .icon-email-blue {
+  @include sprite-width("email-blue");
+  @include sprite-height("email-blue");
+  @include sprite-position("email-blue");
+  }
+  .icon-email-gray {
+  @include sprite-width("email-gray");
+  @include sprite-height("email-gray");
+  @include sprite-position("email-gray");
+  }
+  .icon-lock-blue {
+  @include sprite-width("lock-blue");
+  @include sprite-height("lock-blue");
+  @include sprite-position("lock-blue");
+  }
+  .icon-lock-gray {
+  @include sprite-width("lock-gray");
+  @include sprite-height("lock-gray");
+  @include sprite-position("lock-gray");
+  }
+  .icon-logo {
+  @include sprite-width("logo");
+  @include sprite-height("logo");
+  @include sprite-position("logo");
+  }
+  .icon-name-blue {
+  @include sprite-width("name-blue");
+  @include sprite-height("name-blue");
+  @include sprite-position("name-blue");
+  }
+  .icon-name-gray {
+  @include sprite-width("name-gray");
+  @include sprite-height("name-gray");
+  @include sprite-position("name-gray");
+  }
+  .icon-qq {
+  @include sprite-width("qq");
+  @include sprite-height("qq");
+  @include sprite-position("qq");
+  }
+  .icon-wechat {
+  @include sprite-width("wechat");
+  @include sprite-height("wechat");
+  @include sprite-position("wechat");
+  }
+  .icon-weibo {
+  @include sprite-width("weibo");
+  @include sprite-height("weibo");
+  @include sprite-position("weibo");
+  }
+
+
+.icon_sign {
+  @include sprite-size('parts');
+  background-repeat: no-repeat;
+  display: inline-block;
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+
+    @include sprite-size('parts');
+
+  }
+}

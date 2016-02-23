@@ -98,7 +98,7 @@ var openLogin = function () {
 
   loginWindow = new BrowserWindow(win)
 
-  loginWindow.loadURL('file://' + __dirname + '/html/signin.html')
+  loginWindow.loadURL('file://' + __dirname + '/signin.html')
 
   // loginWindow.webContents.openDevTools()
 
@@ -118,7 +118,7 @@ var openIndex = function () {
 
   indexWindow = new BrowserWindow(win)
 
-  indexWindow.loadURL('file://' + __dirname + '/html/index.html')
+  indexWindow.loadURL('file://' + __dirname + '/index.html')
 
   // indexWindow.webContents.openDevTools()
 
