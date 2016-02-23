@@ -113,8 +113,12 @@ var indexWindow = null
 var openIndex = function () {
   if (indexWindow) return;
 
-  var win = Object.assign({}, defaultWin)
-  win.resizable = true
+  var win = Object.assign({}, defaultWin, {
+    width: 620,
+    height: 55,
+    transparent: false,
+    frame: false
+  })
 
   indexWindow = new BrowserWindow(win)
 
