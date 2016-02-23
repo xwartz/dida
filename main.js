@@ -8,9 +8,9 @@ var Menu = electron.Menu
 var BrowserWindow = electron.BrowserWindow  // Module to create native browser window.
 var ipc = electron.ipcMain
 
-var userConfig = require('./desktop/user-config')
-var menu = require('./desktop/menu')
-var appest = require('./desktop/appest')
+var userConfig = require('./app/user-config')
+var menu = require('./app/menu')
+var appest = require('./app/appest')
 
 var setAppest = function (data) {
   userConfig.saveConfig(data)
@@ -87,7 +87,7 @@ var defaultWin = {
   minWidth: 400,
   resizable: false,
   title: appest.productName,
-  icon: path.resolve('./desktop/icons/', 'icon.png')
+  icon: path.resolve('./app/icons/', 'icon.png')
 }
 
 // 登陆窗口

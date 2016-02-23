@@ -1,17 +1,20 @@
 'use strict'
 
+let $ = require('jquery'),
+    Objectid = require('objectid')
+
 let path = require('path'),
-    userConfig = require('./desktop/user-config'),
-    appest = require('./desktop/appest'),
+    userConfig = require('./app/user-config'),
+    appest = require('./app/appest'),
     conf = userConfig.readConfig('Appest')
 
 const Appest = Object.assign({}, appest, conf)
 
-let $ = require('jquery'),
-    Objectid = require('objectid')
-
 let App = {
+  $el: $('#js-add'),
+
   createTask: function(model) {
+    let _this = this
     const api = Appest.protocol + Appest.api_domain + '/api/v2/task'
     $.ajax({
       type: 'POST',
@@ -19,14 +22,14 @@ let App = {
       contentType: 'application/json',
       data: JSON.stringify(model),
       success: function(data) {
-        console.log(data)
+        _this.$el.val('')
       }
     })
   },
 
   initEvent: function() {
     let _this = this
-    $('#js-add').on('keyup', function(event) {
+    this.$el.on('keyup', function(event) {
       if(event.keyCode === 13) {
         let model = {
           assignee: null,
@@ -37,13 +40,11 @@ let App = {
           isAllDay: null,
           items: [],
           local: true,
-          modifiedTime: '2016-02-23T22:24:29.845+0800',
           priority: 0,
           projectId: Appest.user.inboxId,
           remindTime: null,
           reminder: null,
           reminders: null,
-          sortOrder: 0,
           status: 0,
           timeZone: 'Asia/Shanghai',
           title: $(this).val(),
