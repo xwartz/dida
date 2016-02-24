@@ -1,29 +1,29 @@
 'use strict'
 
-var path = require('path')
-var electron = require('electron')
+let path = require('path'),
+    electron = require('electron')
 
-var app = electron.app  // Module to control application life.
-var Menu = electron.Menu
-var BrowserWindow = electron.BrowserWindow  // Module to create native browser window.
-var ipc = electron.ipcMain
+let app = electron.app
 
-var userConfig = require('./app/user-config')
-var menu = require('./app/menu')
-var appest = require('./app/appest')
+let Menu = electron.Menu
+    BrowserWindow = electron.BrowserWindow  // Module to create native browser window.
+    ipc = electron.ipcMain
 
-var setAppest = function (data) {
+let userConfig = require('./app/user-config'),
+    menu = require('./app/menu'),
+    appest = require('./app/appest')
+
+let setAppest = data => {
   userConfig.saveConfig(data)
 }
 
 // app.commandLine.appendSwitch('ignore-certificate-errors', 'true')
 
 // Report crashes to our server.
-// electron.crashReporter.start()
-
+electron.crashReporter.start()
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   // if (process.platform != 'darwin') {
@@ -31,11 +31,11 @@ app.on('window-all-closed', function() {
   // }
 })
 
-ipc.on('updateAppest', function (event, data) {
+ipc.on('updateAppest', (event, data) => {
   setAppest(data)
 })
 
-var signin = function (data) {
+let signin = data => {
   loginWindow && loginWindow.close()
   setAppest(data)
   if(indexWindow) {
@@ -47,17 +47,17 @@ var signin = function (data) {
 }
 
 // 登录
-ipc.on('signin', function (event, data) {
+ipc.on('signin', (event, data) => {
   signin(data)
 })
 
 // 从 web 登陆，如第三方账户
-ipc.on('signin-from-web', function (event, data) {
+ipc.on('signin-from-web', (event, data) => {
   signin(data)
 })
 
 // 登出
-ipc.on('signout', function (event, data) {
+ipc.on('signout', (event, data) => {
   userConfig.clearConfig()
   indexWindow && indexWindow.close()
   if(loginWindow) {
@@ -70,8 +70,8 @@ ipc.on('signout', function (event, data) {
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
-app.on('ready', function() {
-  var config = userConfig.readConfig('Appest')
+app.on('ready', () => {
+  let config = userConfig.readConfig('Appest')
   if(config && config.user && config.user.inboxId) {
     openIndex()
   } else {
@@ -81,7 +81,7 @@ app.on('ready', function() {
 })
 
 // 默认窗口状态
-var defaultWin = {
+let defaultWin = {
   width: 1024,
   height: 800,
   minWidth: 400,
@@ -91,10 +91,10 @@ var defaultWin = {
 }
 
 // 登陆窗口
-var loginWindow
-var openLogin = function () {
+let loginWindow
+let openLogin = () => {
 
-  var win = Object.assign({}, defaultWin)
+  let win = Object.assign({}, defaultWin)
 
   loginWindow = new BrowserWindow(win)
 
@@ -102,18 +102,19 @@ var openLogin = function () {
 
   // loginWindow.webContents.openDevTools()
 
-  loginWindow.on('closed', function () {
+  loginWindow.on('closed', () => {
     loginWindow.destroy()
     loginWindow = null
   })
 }
 
 // 登录之后
-var indexWindow = null
-var openIndex = function () {
-  if (indexWindow) return;
+let indexWindow = null
+let openIndex = () => {
+  if (indexWindow)
+    return
 
-  var win = Object.assign({}, defaultWin, {
+  let win = Object.assign({}, defaultWin, {
     width: 620,
     height: 55,
     transparent: false,
@@ -126,7 +127,7 @@ var openIndex = function () {
 
   // indexWindow.webContents.openDevTools()
 
-  indexWindow.on('closed', function () {
+  indexWindow.on('closed', () => {
     indexWindow.destroy()
     indexWindow = null
   })
