@@ -1,0 +1,248 @@
+/* 定义一些全局的 class */
+
+
+/* 大小规则 .xx-tny, .xx-sml, .xx-med, .xx-lrg
+ *
+ * button: .btn-tny 26, .btn-sml 30, .btn-med 36, .btn-lrg
+ * text: .text-tny 12, .text-sml 13, .text-med 16, .text-lrg 22
+ * icon tny 14 sml 18 med 32 lrg 40
+ * line: .line-sml 8
+ */
+
+// font-size class
+.text-tny {
+  font-size: $base-font-size-tny;
+}
+
+.text-sml {
+  font-size: $base-font-size-sml;
+}
+
+.text-def {
+  font-size: $base-font-size-def;
+}
+
+.text-med {
+  font-size: $base-font-size-med;
+}
+
+.text-lrg {
+  font-size: $base-font-size-lrg;
+}
+
+
+.left { float: left !important; }
+.right { float: right !important; }
+.clearfix { @include clearfix; }
+
+.hide {
+  display: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// Font smoothing
+// Antialiased font smoothing works best for light text on a dark background.
+// Apply to single elements instead of globally to body.
+// Note this only applies to webkit-based desktop browsers and Firefox 25 (and later) on the Mac.
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+}
+
+.l-divider {
+  height: 1px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+// icon size tny 14 sml 18 med 24
+.i-tny {
+    width: 14px;
+    height: 14px;
+}
+.i-sml {
+    width: 16px;
+    height: 16px;
+}
+.i-med {
+    width: 32px;
+    height: 32px;
+}
+
+.i-lrg {
+  width: 40px;
+  height: 40px;
+}
+
+.i-lrg-x {
+  width: 48px;
+  height: 48px;
+}
+
+.i-xl {
+    width: 100px;
+    height: 100px;
+}
+
+.i-xxl {
+  width: 180px;
+  height: 180px;
+}
+
+.i-xxxl {
+  width: 192px;
+  height: 192px;
+}
+
+.i-redeem {
+  width: 156px;
+  height: 96px;
+}
+
+// adaptive line
+.line-right,
+.line-left {
+  position: relative;
+}
+.line-right {
+  z-index: 1;
+  float: right;
+}
+
+.b-h {
+  height: 100%;
+}
+
+
+
+.drag {
+  visibility: hidden;
+  position: absolute;
+  cursor: move;
+}
+
+.shadow {
+  border: $base-border;
+  box-shadow: $base-box-shadow;
+  border-radius: $base-border-radius;
+}
+
+.pop-shadow {
+  border: $base-border;
+  box-shadow: $base-pop-shadow;
+  border-radius: $base-border-radius;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+img.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.btns {
+  line-height: 1;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+body > svg {
+  display: none;
+}
+
+/* text align */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+/* text align end */
+
+// sort
+.drag-help {
+  width: rem-calc(360);
+  max-width: rem-calc(360);
+  opacity: 0.9;
+}
+
+// 行高 设置
+.line-sml {
+  line-height: rem-calc(21);
+}
+
+.file-wrap {
+  overflow: hidden;
+}
+
+// 最好用 select-disabled
+.select-disabled *,
+.can-not-select * {
+  @include user-select(none);
+}
+
+.select-enabled,
+.select-enabled *,
+.can-select,
+.can-select * {
+  @include user-select(text);
+}
+
+.select-disabled,
+.can-not-select {
+  input,
+  textarea,
+  *[contenteditable] {
+   @include user-select(text);
+  }
+}
+
+.tl-body {
+  .antiscroll-wrap {
+    position: static; // 为了拖出去
+  }
+}
+
+.loading-view {
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    z-index: $zindex-loadview;
+    text-align: center;
+
+    .logo {
+       position: relative;
+       height: 100%;
+       top: 50%;
+       margin-top: rem-calc(-100);
+    }
+}
+
+.avoid-event {
+  svg {
+    pointer-events: none;
+  }
+}

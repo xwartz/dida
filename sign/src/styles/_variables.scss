@@ -1,0 +1,211 @@
+
+
+@import "functions";
+@import "mixins";
+@import "color";
+
+
+
+/* ========== background-color ========= */
+// base bg
+$base-bg: $white;
+
+// active bg color
+$base-active-bg: $indigo;
+$base-active-light-bg: $ashgrey;
+$base-alert-bg: $red;
+$base-disabled-bg: $disabled;
+
+// divider
+$base-divider-bg: $grey;
+
+
+
+/* ==========  font  ========== */
+
+// defined font size
+$body-font-size: rem-calc(14);
+$base-font-size-tny: rem-calc(12);
+$base-font-size-sml: rem-calc(13);
+$base-font-size-def: $body-font-size;
+$base-font-size-med: rem-calc(16);
+$base-font-size-mid: rem-calc(20);
+$base-font-size-lrg: rem-calc(22);
+
+// defined font color
+$base-font-color: $bistre; // 333 正常
+$base-font-color-primary: $bistre; //333 重要
+$base-font-color-secondary: $darkgrey; // 737373 次要
+$base-font-color-alert: $red; //  f15964 警告 提醒
+$base-font-color-info: $manatee; //aaa 消息信息
+$base-font-color-link: $indigo; 
+$base-font-color-deepbg: $white; // fff 白色
+$base-font-color-title: $indigo; 
+
+$base-font-color-info-title: $manatee; // aaa 
+
+$base-font-color-holder: $lavendergray;// c7c7c7 
+
+
+$font-family: -apple-system,".SFNSText-Regular",'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif;
+
+
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+$body-bg: $white !default;
+$body-font-color: $base-font-color;
+$body-font-family: $font-family !default;
+$body-font-weight: $font-weight-normal !default;
+$body-font-style: normal !default;
+
+$font-smoothing-webkit: antialiased !default;
+$font-smoothing-moz: grayscale !default;
+
+$base-font-size: 100% !default;
+$base-line-height: 1.5 !default;
+
+
+
+/* ==========  Media Query Ranges  ========== */
+
+$small-breakpoint:  460px  !default;
+
+$small-col-breakpoint:  560px  !default;
+
+$medium-breakpoint: 920px !default;
+$large-breakpoint:  1020px !default;
+$xlarge-breakpoint: 1920px !default;
+$popup-breakpoint:  610px  !default;
+
+$small-range:   (0, $small-breakpoint) !default;
+$small-col-range:  ($small-breakpoint  + 1px, $small-col-breakpoint) !default;
+$medium-range:  ($small-breakpoint  + 1px, $medium-breakpoint) !default;
+$large-range:   ($medium-breakpoint + 1px, $large-breakpoint)  !default;
+$xlarge-range:  ($large-breakpoint  + 1px, $xlarge-breakpoint) !default;
+$popup-range:  (0, $popup-breakpoint)  !default;
+
+$screen: "only screen" !default;
+
+$popup-low: "#{$screen} and (max-width:#{upper-bound($popup-range)})" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$small-col-only: "#{$screen} and (min-width: #{lower-bound($small-col-range)}) and (max-width:#{upper-bound($small-col-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+$medium-low: "#{$screen} and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+$large-low: "#{$screen} and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+
+$retina: (
+  "#{$screen} and (min-device-pixel-ratio: 2)",
+  "#{$screen} and (min-resolution: 192dpi)",
+  "#{$screen} and (min-resolution: 2dppx)"
+);
+
+/* ==========  /Media Query Ranges  ========== */
+
+// grid
+$grid-left-width: rem-calc(260);
+// $grid-right-width: rem-calc(460);
+$grid-right-width: 36%;
+
+$grid-right-width-col-2: 45%;
+
+$grid-right-width-col-1: 70%;
+
+$grid-left-bg: $base-active-bg;
+
+
+//We use this as cursors values for enabling the option of having custom cursors in the whole site's stylesheet
+$cursor-auto-value: auto !default;
+$cursor-crosshair-value: crosshair !default;
+$cursor-default-value: default !default;
+$cursor-disabled-value: not-allowed !default;
+$cursor-pointer-value: pointer !default;
+$cursor-help-value: help !default;
+$cursor-text-value: text !default;
+
+// border
+$base-border-color: $timberwolf;
+
+$base-focus-border-color: $indigo;
+$base-focus-border: 1px solid $base-focus-border-color;
+
+$base-border-style: 1px solid;
+
+$base-border: 1px solid $base-border-color;
+$base-border-radius: rem-calc(4);
+$global-radius: $base-border-radius;
+$list-border-width: $base-border-radius;
+
+$input-base-border-color: $grey;
+
+
+// box-shadow
+$base-box-shadow: 0 6px 20px rgba(0,0,0,.15) !default;
+$base-pop-shadow: 0 12px 40px rgba(0,0,0,.3) !default;
+$base-input-box-shadow: 0 0 8px rgba(0, 0, 0, 0.06) !default;
+
+$pop-box-shdow: 0 7px 18px rgba(0, 0, 0, 0.12);
+$pop-down-box-shdow: 0 -7px 18px rgba(0, 0, 0, 0.12);
+
+// float
+$default-float: left !default;
+$opposite-direction: right !default;
+
+
+// main padding
+$col-padding: rem-calc(20);
+$row-padding: rem-calc(10);
+
+// z-index master list
+$zindex-1:            1 !default;
+$zindex-2:            2 !default;
+$zindex-3:            3 !default;
+
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-loadview:          1045 !default;
+$zindex-modal:             1050 !default;
+$zindex-drag:              1080 !default;
+
+// icon size
+$base-icon-size: rem-calc(24);
+
+$small-icon-size: rem-calc(14);
+
+$li-line-height: rem-calc(36) !default; 
+
+// avatar size
+$avatar-size-sml: rem-calc(16);
+$avatar-size: rem-calc(36);
+$avatar-size-lrg: rem-calc(60);
+
+
+$base-transition-duration: .2s;
+$base-transition-timing-function: ease;
+
+
+$base-list-padding-t-b: rem-calc(5);
+// select list
+$base-list-padding: $base-list-padding-t-b 0;
+
+$base-modal-padding: rem-calc(24);
