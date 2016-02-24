@@ -5,8 +5,8 @@ let path = require('path'),
 
 let app = electron.app
 
-let Menu = electron.Menu
-    BrowserWindow = electron.BrowserWindow  // Module to create native browser window.
+let Menu = electron.Menu,
+    BrowserWindow = electron.BrowserWindow,  // Module to create native browser window.
     ipc = electron.ipcMain
 
 let userConfig = require('./app/user-config'),

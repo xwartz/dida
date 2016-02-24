@@ -12,8 +12,7 @@ const Appest = Object.assign({}, appest, conf)
 
 let App = {
   $el: $('#js-add'),
-
-  createTask: function(model) {
+  createTask (model) {
     let _this = this
     const api = Appest.protocol + Appest.api_domain + '/api/v2/task'
     $.ajax({
@@ -21,15 +20,14 @@ let App = {
       url: api,
       contentType: 'application/json',
       data: JSON.stringify(model),
-      success: function(data) {
+      success (data) {
         _this.$el.val('')
       }
     })
   },
 
-  initEvent: function() {
-    let _this = this
-    this.$el.on('keyup', function(event) {
+  initEvent () {
+    this.$el.on('keyup', (event) => {
       if(event.keyCode === 13) {
         let model = {
           assignee: null,
@@ -47,15 +45,14 @@ let App = {
           reminders: null,
           status: 0,
           timeZone: 'Asia/Shanghai',
-          title: $(this).val(),
+          title: this.$el.val(),
         }
-        _this.createTask(model)
+        this.createTask(model)
       }
     })
   },
 
-  init: function() {
-    console.log(Appest)
+  init () {
     this.initEvent()
   }
 
