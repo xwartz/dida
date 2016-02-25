@@ -1,7 +1,7 @@
 {
-  "name": "pupa",
+  "name": "dida",
   "version": "1.0.0",
-  "description": "Desktop App of Pupa",
+  "description": "Desktop App of 滴答清单(TickTick)",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,20 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xwartz/pupa.git"
+    "url": "git+https://github.com/xwartz/dida.git"
   },
   "keywords": [
-    "pupa",
+    "dida",
+    "ticktick",
     "electron",
     "js",
-    "reactjs"
+    "es6",
+    "desktop app"
   ],
   "author": "xwartz <stddup@gmail.com> (https://github.com/xwartz/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xwartz/pupa/issues"
+    "url": "https://github.com/xwartz/dida/issues"
   },
-  "homepage": "https://github.com/xwartz/pupa#readme",
+  "homepage": "https://github.com/xwartz/dida#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.7",
     "eslint-config-standard": "^4.4.0",
