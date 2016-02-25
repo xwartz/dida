@@ -1,38 +1,38 @@
 $sprite: (
   email-blue: (
-  offset-x: -56px,
-  offset-y: -68px,
+  offset-x: -64px,
+  offset-y: 0px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   email-gray: (
-  offset-x: -80px,
-  offset-y: -68px,
+  offset-x: -64px,
+  offset-y: -24px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   lock-blue: (
-  offset-x: -104px,
-  offset-y: -68px,
+  offset-x: -88px,
+  offset-y: 0px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   lock-gray: (
-  offset-x: -128px,
-  offset-y: -68px,
+  offset-x: -88px,
+  offset-y: -24px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   logo: (
@@ -40,58 +40,31 @@ $sprite: (
   offset-y: 0px,
   width: 64px,
   height: 68px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   name-blue: (
-  offset-x: -152px,
+  offset-x: 0px,
   offset-y: -68px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
   name-gray: (
-  offset-x: -56px,
-  offset-y: -92px,
+  offset-x: -24px,
+  offset-y: -68px,
   width: 24px,
   height: 24px,
-  total-width: 176px,
-  total-height: 124px,
-  image: 'sign-icons.png'
-  ),
-  qq: (
-  offset-x: -64px,
-  offset-y: 0px,
-  width: 56px,
-  height: 56px,
-  total-width: 176px,
-  total-height: 124px,
-  image: 'sign-icons.png'
-  ),
-  wechat: (
-  offset-x: -120px,
-  offset-y: 0px,
-  width: 56px,
-  height: 56px,
-  total-width: 176px,
-  total-height: 124px,
-  image: 'sign-icons.png'
-  ),
-  weibo: (
-  offset-x: 0px,
-  offset-y: -68px,
-  width: 56px,
-  height: 56px,
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   ),
 parts: (
-  total-width: 176px,
-  total-height: 124px,
+  total-width: 112px,
+  total-height: 92px,
   image: 'sign-icons.png'
   )
 );
@@ -158,21 +131,6 @@ parts: (
   @include sprite-width("name-gray");
   @include sprite-height("name-gray");
   @include sprite-position("name-gray");
-  }
-  .icon-qq {
-  @include sprite-width("qq");
-  @include sprite-height("qq");
-  @include sprite-position("qq");
-  }
-  .icon-wechat {
-  @include sprite-width("wechat");
-  @include sprite-height("wechat");
-  @include sprite-position("wechat");
-  }
-  .icon-weibo {
-  @include sprite-width("weibo");
-  @include sprite-height("weibo");
-  @include sprite-position("weibo");
   }
 
 
