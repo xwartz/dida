@@ -7,7 +7,8 @@ let app = electron.app
 
 let Menu = electron.Menu,
     BrowserWindow = electron.BrowserWindow,  // Module to create native browser window.
-    ipc = electron.ipcMain
+    ipc = electron.ipcMain,
+    globalShortcut = electron.globalShortcut
 
 let userConfig = require('./app/user-config'),
     menu = require('./app/menu'),
@@ -15,6 +16,20 @@ let userConfig = require('./app/user-config'),
 
 let setAppest = data => {
   userConfig.saveConfig(data)
+}
+
+// register shortcut
+let registerShortcut = () => {
+  let ret = globalShortcut.register('Command+Shift+A', function() {
+    indexWindow && indexWindow.show() && indexWindow.focus()
+  })
+  if (!ret) {
+    console.log('registration failed')
+  }
+}
+
+let unRegisterShortcut = () => {
+  globalShortcut.unregisterAll()
 }
 
 // app.commandLine.appendSwitch('ignore-certificate-errors', 'true')
@@ -27,6 +42,7 @@ app.on('window-all-closed', () => {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   // if (process.platform != 'darwin') {
+    unRegisterShortcut()
     app.quit()
   // }
 })
@@ -78,6 +94,7 @@ app.on('ready', () => {
     openLogin()
   }
   Menu.setApplicationMenu(menu)
+  registerShortcut()
 })
 
 // 默认窗口状态
