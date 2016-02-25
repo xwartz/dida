@@ -1,6 +1,6 @@
 # 滴答清单(TickTick)
 
-> [滴答清单](https://dida365.com/) && [TickTick](https://ticktick.com/) as an app as an app
+> [滴答清单](https://dida365.com/) && [TickTick](https://ticktick.com/) as an app as.
 
 Use Electron to create 滴答清单(TickTick) desktop app.
 
