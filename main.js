@@ -99,9 +99,9 @@ app.on('ready', () => {
 
 // 默认窗口状态
 let defaultWin = {
-  width: 1024,
-  height: 800,
-  minWidth: 400,
+  width: 620,
+  height: 600,
+  minWidth: 600,
   resizable: false,
   title: appest.productName,
   icon: path.resolve('./app/icons/', 'icon.png')
@@ -132,7 +132,6 @@ let openIndex = () => {
     return
 
   let win = Object.assign({}, defaultWin, {
-    width: 620,
     height: 55,
     transparent: false,
     frame: false
