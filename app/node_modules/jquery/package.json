@@ -1,0 +1,127 @@
+{
+  "name": "jquery",
+  "title": "jQuery",
+  "description": "JavaScript library for DOM operations",
+  "version": "2.2.1",
+  "main": "dist/jquery.js",
+  "homepage": "http://jquery.com",
+  "author": {
+    "name": "jQuery Foundation and other contributors",
+    "url": "https://github.com/jquery/jquery/blob/2.2.1/AUTHORS.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jquery/jquery.git"
+  },
+  "keywords": [
+    "jquery",
+    "javascript",
+    "browser",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/jquery/jquery/issues"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "commitplease": "2.0.0",
+    "core-js": "0.9.17",
+    "grunt": "0.4.5",
+    "grunt-babel": "5.0.1",
+    "grunt-cli": "0.1.13",
+    "grunt-compare-size": "0.4.0",
+    "grunt-contrib-jshint": "0.11.2",
+    "grunt-contrib-uglify": "0.9.2",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-git-authors": "2.0.1",
+    "grunt-jscs": "2.1.0",
+    "grunt-jsonlint": "1.0.4",
+    "grunt-npmcopy": "0.1.0",
+    "gzip-js": "0.3.2",
+    "jsdom": "5.6.1",
+    "load-grunt-tasks": "1.0.0",
+    "qunitjs": "1.17.1",
+    "qunit-assert-step": "1.0.3",
+    "requirejs": "2.1.17",
+    "sinon": "1.10.3",
+    "sizzle": "2.2.1",
+    "strip-json-comments": "1.0.3",
+    "testswarm": "1.1.0",
+    "win-spawn": "2.0.0"
+  },
+  "scripts": {
+    "build": "npm install && grunt",
+    "start": "grunt watch",
+    "test": "grunt && grunt test"
+  },
+  "commitplease": {
+    "components": [
+      "Docs",
+      "Tests",
+      "Build",
+      "Release",
+      "Core",
+      "Ajax",
+      "Attributes",
+      "Callbacks",
+      "CSS",
+      "Data",
+      "Deferred",
+      "Deprecated",
+      "Dimensions",
+      "Effects",
+      "Event",
+      "Manipulation",
+      "Offset",
+      "Queue",
+      "Selector",
+      "Serialize",
+      "Traversing",
+      "Wrap"
+    ]
+  },
+  "gitHead": "788eaba2f83e7b7445c7a83a50c81c0704423874",
+  "_id": "jquery@2.2.1",
+  "_shasum": "3c3e16854ad3d2ac44ac65021b17426d22ad803f",
+  "_from": "jquery@latest",
+  "_npmVersion": "2.14.19",
+  "_nodeVersion": "0.10.42",
+  "_npmUser": {
+    "name": "timmywil",
+    "email": "timmywillisn@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "dmethvin",
+      "email": "dave.methvin@gmail.com"
+    },
+    {
+      "name": "m_gol",
+      "email": "m.goleb@gmail.com"
+    },
+    {
+      "name": "scott.gonzalez",
+      "email": "scott.gonzalez@gmail.com"
+    },
+    {
+      "name": "timmywil",
+      "email": "timmywillisn@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "3c3e16854ad3d2ac44ac65021b17426d22ad803f",
+    "size": 363944,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/jquery/download/jquery-2.2.1.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/jquery-2.2.1.tgz_1456168325917_0.42471840139478445"
+  },
+  "directories": {},
+  "publish_time": 1456168329116,
+  "_cnpm_publish_time": 1456168329116,
+  "_resolved": "https://registry.npm.taobao.org/jquery/download/jquery-2.2.1.tgz",
+  "readme": "ERROR: No README data found!"
+}
