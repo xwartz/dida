@@ -1,7 +1,7 @@
 'use strict'
 
 let ipc = require('electron').ipcRenderer
-let Appest = require(__dirname + '/app/appest')
+let Appest = require(__dirname + '/appest')
 
 let homeUrl = Appest.protocol + Appest.domain
 let emailRegexp = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,9}$/i

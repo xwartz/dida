@@ -6,13 +6,13 @@ let path = require('path'),
 let app = electron.app
 
 let Menu = electron.Menu,
-    BrowserWindow = electron.BrowserWindow,  // Module to create native browser window.
+    BrowserWindow = electron.BrowserWindow,
     ipc = electron.ipcMain,
     globalShortcut = electron.globalShortcut
 
-let userConfig = require('./app/user-config'),
-    menu = require('./app/menu'),
-    appest = require('./app/appest')
+let userConfig = require('./user-config'),
+    menu = require('./menu'),
+    appest = require('./appest')
 
 let setAppest = data => {
   userConfig.saveConfig(data)
@@ -20,8 +20,11 @@ let setAppest = data => {
 
 // register shortcut
 let registerShortcut = () => {
-  let ret = globalShortcut.register('Command+Shift+A', function() {
-    indexWindow && indexWindow.show() && indexWindow.focus()
+  let ret = globalShortcut.register('Command+Shift+A', () => {
+    if(indexWindow) {
+      indexWindow.show()
+      indexWindow.focus()
+    }
   })
   if (!ret) {
     console.log('registration failed')
@@ -47,10 +50,6 @@ app.on('window-all-closed', () => {
   // }
 })
 
-ipc.on('updateAppest', (event, data) => {
-  setAppest(data)
-})
-
 let signin = data => {
   loginWindow && loginWindow.close()
   setAppest(data)
@@ -64,11 +63,6 @@ let signin = data => {
 
 // 登录
 ipc.on('signin', (event, data) => {
-  signin(data)
-})
-
-// 从 web 登陆，如第三方账户
-ipc.on('signin-from-web', (event, data) => {
   signin(data)
 })
 
@@ -104,7 +98,7 @@ let defaultWin = {
   minWidth: 600,
   resizable: false,
   title: appest.productName,
-  icon: path.resolve('./app/icons/', 'icon.png')
+  icon: path.resolve('./icons/', 'icon.png')
 }
 
 // 登陆窗口

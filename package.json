@@ -2,10 +2,10 @@
   "name": "dida",
   "version": "1.0.0",
   "description": "Desktop App of 滴答清单(TickTick)",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js"
+    "start": "electron app/main.js"
   },
   "repository": {
     "type": "git",

@@ -4,8 +4,8 @@ let $ = require('jquery'),
     Objectid = require('objectid')
 
 let path = require('path'),
-    userConfig = require('./app/user-config'),
-    appest = require('./app/appest'),
+    userConfig = require('./user-config'),
+    appest = require('./appest'),
     conf = userConfig.readConfig('Appest')
 
 const Appest = Object.assign({}, appest, conf)
