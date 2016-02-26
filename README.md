@@ -20,6 +20,15 @@ $ npm install
 $ npm start
 ```
 
+## Build
+
+```
+$ npm run build:dida
+```
+or
+```
+$ npm run build:tick
+```
 
 ## License
 

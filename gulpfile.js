@@ -7,6 +7,16 @@ var gulp = require('gulp'),
 
 
 
+gulp.task('config', function () {
+  var name = argv.site === 'dida' ? 'dida' : 'tick'
+  gulp.src(['./app/' + 'appest-' + name + '.js'])
+    .pipe(rename(function(path) {
+        path.basename = 'appest'
+    }))
+    .pipe(gulp.dest('./app'))
+})
+
+
 gulp.task('pkg:packager', function () {
   var name = argv.site === 'dida' ? 'dida' : 'ticktick'
   var opts = {
@@ -46,12 +56,14 @@ gulp.task('pkg:builder:tick', shell.task([
 
 gulp.task('pkg:dida', shell.task([
   'gulp pkg:clean',
+  'gulp config --site dida',
   'gulp pkg:packager --site dida',
   'gulp pkg:builder:dida'
 ]))
 
 gulp.task('pkg:tick', shell.task([
   'gulp pkg:clean',
+  'gulp config --site tick',
   'gulp pkg:packager --site tick',
   'gulp pkg:builder:tick'
 ]))

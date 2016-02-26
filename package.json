@@ -5,7 +5,9 @@
   "main": "app/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron app/main.js"
+    "start": "electron app/main.js",
+    "build:dida": "gulp pkg:dida",
+    "build:tick": "gulp pkg:tick"
   },
   "repository": {
     "type": "git",
