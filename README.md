@@ -1,10 +1,8 @@
 # 滴答清单(TickTick)
 
-> [滴答清单](https://dida365.com/) && [TickTick](https://ticktick.com/) as an app as.
+> Task Manager: [滴答清单](https://dida365.com/) && [TickTick](https://ticktick.com/)
 
-Use Electron to create 滴答清单(TickTick) desktop app.
-
-Easily to add task by shortcut.
+dida: Easily add task to 滴答清单(TickTick) by shortcut.
 
 <img src="screenshot.png" width="600">
 
