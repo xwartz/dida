@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     del = require('del'),
     packager = require('electron-packager'),
     builder = require('electron-builder'),
-    argv = require('yargs').argv
+    argv = require('yargs').argv,
+    pjson = require('./package.json')
 
 
 
@@ -22,12 +23,12 @@ gulp.task('pkg:packager', function () {
   var name = argv.site === 'dida' ? 'dida' : 'ticktick'
   var opts = {
     'dir': './app',
-    'arch': 'all',
-    'platform': 'win32,darwin',
+    'arch': 'x64',
+    'platform': 'darwin,win32',
     'all': false,
     'app-category-type': 'public.app-category.utilities',
-    'app-version': '1.0.0',
-    'asar': true,
+    'app-version': pjson.version,
+    'asar': false,
     'icon': './app/icons/icon.png',
     // 'ignore': /node_modules/,
     'name': name,

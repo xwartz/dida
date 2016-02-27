@@ -12,7 +12,7 @@
   "win" : {
     "title" : "TickTick",
     "version" : "1.0.0",
-    "publisher": "Appest",
+    "publisher": "xwartz",
     "icon" : "app/icons/icon.ico",
     "verbosity": 1
   }

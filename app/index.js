@@ -1,7 +1,7 @@
 'use strict'
 
-let $ = require('jquery'),
-    Objectid = require('objectid')
+let Objectid = require('objectid')
+
 
 let path = require('path'),
     userConfig = require('./user-config'),
@@ -11,23 +11,27 @@ let path = require('path'),
 const Appest = Object.assign({}, appest, conf)
 
 let App = {
-  $el: $('#js-add'),
+  $el: document.getElementById('js-add'),
   createTask (model) {
-    let _this = this
     const api = Appest.protocol + Appest.api_domain + '/api/v2/task'
-    $.ajax({
-      type: 'POST',
-      url: api,
-      contentType: 'application/json',
-      data: JSON.stringify(model),
-      success (data) {
-        _this.$el.val('')
+
+    fetch(api, {
+      credentials: 'include',
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(model)
+    }).then((res) => {
+      if(res.status >= 200 && res.status < 300) {
+        this.$el.value = ''
       }
     })
   },
 
   initEvent () {
-    this.$el.on('keyup', (event) => {
+    this.$el.addEventListener('keyup', (event) => {
       if(event.keyCode === 13) {
         let model = {
           assignee: null,
@@ -45,11 +49,11 @@ let App = {
           reminders: null,
           status: 0,
           timeZone: 'Asia/Shanghai',
-          title: this.$el.val(),
+          title: this.$el.value,
         }
         this.createTask(model)
       }
-    })
+    }, false)
   },
 
   init () {
