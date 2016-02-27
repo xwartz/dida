@@ -30,6 +30,12 @@ or
 $ npm run build:tick
 ```
 
+## Note
+
+### Mirrors
+
+[China](https://npm.taobao.org/)
+
 ## License
 
 ©MIT
