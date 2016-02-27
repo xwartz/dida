@@ -11,7 +11,7 @@ Easily to add task by shortcut.
 ## Dev
 
 ```
-$ npm install
+$ npm i && cd app && npm i
 ```
 
 ### Run
